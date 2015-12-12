@@ -313,7 +313,6 @@ gulp.task('ts.prod', function () {
  *----------------------------------------*/
 var htmlTask = function (options) {
     var cssDest = convertBuildPaths(sassDepsPath_src, options.buildDir, '.sass', '.css');
-    console.log(cssDest)
     var jsDest = convertBuildPaths(jsDepsPath_src, options.buildDir, '', '');
     var nodeDest = injectArray(nodeModulesSrc, options, '@@NODE');
     var specDest = injectArray(nodeModulesSrc, options, '@@SPEC');
@@ -329,7 +328,7 @@ var htmlTask = function (options) {
             .pipe(plumber({errorHandler: onError}))
             .pipe(gulp.dest(options.buildDir))
             .pipe(inject(gulp.src(specDest, {read: false}), {relative: IS_RELATIVE, name: 'specialjs'}))
-            .pipe(inject(gulp.src(nodeDest, {read: false}), {relative: IS_RELATIVE}))//For css
+            .pipe(inject(gulp.src(nodeDest, {read: false}), {relative: IS_RELATIVE, name: 'nodecss'}))//For css
             .pipe(inject(gulp.src(nodeDest, {read: false}), {relative: IS_RELATIVE, name: 'nodejs'}))
             .pipe(inject(gulp.src(jsDest, {read: false}), {relative: IS_RELATIVE, name: 'libjs'}))
             .pipe(inject(gulp.src(cssDest, {read: false}), {relative: IS_RELATIVE}))
