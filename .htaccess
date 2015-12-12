@@ -1,0 +1,27 @@
+#<IfModule authz_core_module>
+#    RewriteEngine on
+#   #RewriteBase /server
+#   RewriteCond     $1 !^(/index\.php|/img|/js|/css|/robots\.txt|/favicon\.ico)
+#    #RewriteCond     %{REQUEST_FILENAME} !-f
+#    #RewriteCond     %{REQUEST_FILENAME} !-d
+#    #RewriteRule     .               api/index.html              [L]
+##    Options +FollowSymLinks
+#    RewriteCond $1 !^(index\.php|resources|robots\.txt)
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    #RewriteRule ^(.*)/$ /$1 [L,R=301]
+#   #RewriteRule ^(.*[^/])/?$ src/index.html/$1 [L,QSA]
+#   RewriteRule ^(.*[^/])/?$ dist/dev/index.html [L]
+#
+#</IfModule>
+#<IfModule !authz_core_module>
+#
+##    RewriteEngine on
+##       RewriteCond $1 !^(index\.php|resources|robots\.txt)
+##       RewriteCond %{REQUEST_FILENAME} !-f
+##       RewriteCond %{REQUEST_FILENAME} !-d
+##       RewriteRule ^(.*)$ index.html/$1 [L,QSA]
+#</IfModule>
+Options -Indexes
+
+DirectoryIndex dist/dev/index.html

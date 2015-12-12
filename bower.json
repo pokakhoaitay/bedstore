@@ -1,0 +1,20 @@
+{
+  "name": "x-wood.com",
+  "description": "A furniture project website writing by Angular2 and TypeScript",
+  "main": "",
+  "authors": [
+    "tron.nguyen <pokakhoaitay@live.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pokakhoaitay/x-wood.com",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

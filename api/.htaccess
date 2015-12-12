@@ -1,0 +1,21 @@
+<IfModule authz_core_module>
+    RewriteEngine on
+   #RewriteBase /
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+  #RewriteCond $1 !^(index\.php|images|robots\.txt)
+  RewriteCond $1 !^(index\.php|images|robots\.txt)
+  RewriteRule ^(.*)$ index.php/$1 [L]
+
+</IfModule>
+<IfModule !authz_core_module>
+
+#    RewriteEngine on
+#       RewriteCond $1 !^(index\.php|resources|robots\.txt)
+#       RewriteCond %{REQUEST_FILENAME} !-f
+#       RewriteCond %{REQUEST_FILENAME} !-d
+#       RewriteRule ^(.*)$ index.html/$1 [L,QSA]
+</IfModule>
+Options -Indexes
+
+#DirectoryIndex dist/dev/index.html

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular2 Starter Kit</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<base href="/">-->
+
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- inject:css -->
+    <!-- endinject -->
+
+
+</head>
+<body>
+<app>Loading...</app>
+
+<!-- specialjs:js -->
+<!-- endinject -->
+
+<script>
+    System.config({
+        defaultJSExtensions:true,
+        packages: {
+            '<%APP_ROOT_PATH%>/components': {defaultExtension: 'js'},
+            '<%APP_ROOT_PATH%>/api': {defaultExtension: 'js'},
+            '<%APP_ROOT_PATH%>/utils': {defaultExtension: 'js'},
+        },
+        paths: {
+            'rxjs/observable/*' : '<%APP_ROOT_PATH%>/assets/lib/node_modules/rxjs/add/observable/*',
+            'rxjs/operator/*' : '<%APP_ROOT_PATH%>/assets/lib/node_modules/rxjs/add/operator/*',
+            'rxjs/*' : '<%APP_ROOT_PATH%>/assets/lib/node_modules/rxjs/*.js',
+            //'angular2/*' : '<%APP_ROOT_PATH%>/lib/assets/node_modules/angular2/*.js',
+            //'angular2/src' : './assets/lib/node_modules/angular2/src/*.js',
+            //'angular2/angular2/*' : './assets/lib/node_modules/angular2/bundles/*.js',
+            // 'angular2/router' : './assets/lib/node_modules/angular2/bundles/router.dev.js',
+        },
+        map:{
+            //'angular2': '/assets/lib/node_modules/angular2',
+            //'angular2/angular2': '/assets/lib/node_modules/angular2/bundles/angular2.js',
+            //'angular2/http': '/assets/lib/node_modules/angular2/bundles/http.dev.js',
+            // 'angular2/router': '/assets/lib/node_modules/angular2/bundles/router.dev.js'
+        }
+    });
+
+
+</script>
+
+<!-- nodejs:js -->
+<!-- endinject -->
+
+<!-- libjs:js -->
+<!-- endinject -->
+
+<script>
+    System.import('<%APP_ROOT_PATH%>/components/app/bootstrap')
+</script>
+</body>
+</html>
